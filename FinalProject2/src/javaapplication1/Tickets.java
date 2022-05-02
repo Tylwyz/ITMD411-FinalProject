@@ -168,8 +168,8 @@ public class Tickets extends JFrame implements ActionListener {
 			try {
 				String ticketID = JOptionPane.showInputDialog(null, "Enter ticket ID that's being updated");
 				
-				String[] choices = {"Update Description"};
-				String response = (String) JOptionPane.showInputDialog(null, "What is being updated?", "Upadte a Ticket", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
+				String[] choices = {"Update Name", "Update Description",};
+				String response = (String) JOptionPane.showInputDialog(null, "What is being updated?", "Update a Ticket", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
 				
 				String oldTicket, updatedTicket;
 				if(response.equals("Update Name")) {
@@ -200,7 +200,7 @@ public class Tickets extends JFrame implements ActionListener {
 				
 				String ticketID = JOptionPane.showInputDialog(null, "Enter ticket ID to delete");
 				
-				int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this ticket?", "Yes I'm sure", JOptionPane.YES_NO_OPTION);
+				int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this ticket?", "Delete Ticket", JOptionPane.YES_NO_OPTION);
 				if(response == JOptionPane.YES_OPTION) {
 					dao.deleteRecords(ticketID);
 					JOptionPane.showMessageDialog(null, "Ticket ID: " + ticketID + "has been deleted");
@@ -221,10 +221,10 @@ public class Tickets extends JFrame implements ActionListener {
 			try {
 				String ticketID = JOptionPane.showInputDialog(null, "Enter Ticket ID to be closed");
 				
-				int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to close this ticket?", "Yes I'm sure", JOptionPane.YES_NO_OPTION);
+				int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to close this ticket?", "Close Ticket", JOptionPane.YES_NO_OPTION);
 				if (response == JOptionPane.YES_OPTION) {
 					dao.closeRecords(ticketID);
-					JOptionPane.showMessageDialog(null, "Ticket ID:" + ticketID + "has been closed");
+					JOptionPane.showMessageDialog(null, "Ticket ID:" + ticketID + " has been closed");
 					System.out.println("Ticket has been closed");
 				}
 				else {
